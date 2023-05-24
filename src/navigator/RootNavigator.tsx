@@ -21,7 +21,7 @@ const RootNavigator = () => (
       }
     }}>
     <Root.Screen name={routes.Catalog} component={Catalog} />
-    <Root.Screen name={routes.Details} component={Details} />
+    <Root.Screen name={routes.Details} component={Details as React.FC} />
   </Root.Navigator>
 )
 

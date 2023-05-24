@@ -1,36 +1,35 @@
 import axios from 'axios'
 import { ENDPOINTS } from '@constants/core/api'
-import { IProduct, IProductResponse } from '@models/Product.model'
+import { IProduct } from '@models/Product.model'
 import callApi from './config/axiosUtils'
 
 const getAll = async () => {
-  const response = await callApi<IProductResponse[]>({
+  const response = await callApi<IProduct[]>({
     url: ENDPOINTS.GET_PRODUCTS
   })
 
   if (axios.isAxiosError(response)) {
     return []
   } else {
-    return response.map(parseProduct)
+    return response
+  }
+}
+
+const getOne = async (id: number) => {
+  const response = await callApi<IProduct>({
+    url: ENDPOINTS.GET_ONE_PRODUCT(id)
+  })
+
+  if (axios.isAxiosError(response)) {
+    return null
+  } else {
+    return response
   }
 }
 
 const ProductsService = {
-  getAll
+  getAll,
+  getOne
 }
-
-const parseProduct = ({
-  id,
-  category,
-  image,
-  price,
-  title
-}: IProductResponse): IProduct => ({
-  id,
-  category,
-  image,
-  name: title,
-  price: +price.toFixed(2)
-})
 
 export default ProductsService

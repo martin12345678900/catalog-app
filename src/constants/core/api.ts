@@ -17,5 +17,6 @@ export const METHODS = {
 }
 
 export const ENDPOINTS = {
-  GET_PRODUCTS: '/products'
+  GET_PRODUCTS: '/products',
+  GET_ONE_PRODUCT: (id: number) => `/products/${id.toString()}`
 }

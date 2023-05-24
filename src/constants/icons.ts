@@ -1,5 +1,6 @@
 const Icons = {
-  back: 'back'
+  back: 'back',
+  cart: 'shoppingCart'
 }
 
 export default Icons

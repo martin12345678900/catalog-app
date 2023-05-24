@@ -11,10 +11,11 @@ interface ISearchBarProps {
 const SearchBar: React.FC<ISearchBarProps> = ({ value, onChange }) => (
   <TextInput
     accessibilityRole='search'
-    placeholder='Search by name or catalog'
+    placeholder='Search by name or category'
     value={value}
     style={styles.container}
     placeholderTextColor={primary}
+    autoCapitalize='none'
     onChangeText={onChange}
   />
 )
