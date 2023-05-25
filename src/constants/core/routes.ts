@@ -6,7 +6,8 @@ const routes = {
 
   // Screens
   Catalog: `${packageName}.catalog`,
-  Details: `${packageName}.details`
+  Details: `${packageName}.details`,
+  Cart: `${packageName}.cart`
 }
 
 export default routes
