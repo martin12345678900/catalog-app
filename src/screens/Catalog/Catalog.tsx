@@ -4,7 +4,7 @@ import ScreenWrapper from '@components/ScreenWrapper'
 import ShoppingCartButton from '@components/ShoppingCartButton'
 
 import SearchBar from './components/SearchBar'
-import Products from './components/Products/Products'
+import Products from './components/Products'
 
 const Catalog = () => {
   const [query, setQuery] = useState('')
